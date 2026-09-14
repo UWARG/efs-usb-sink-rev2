@@ -15,15 +15,9 @@ A web-controlled, dark-mode terminal interface for an ESP32-C3 microcontroller c
 
 | Component / Function | ESP32-C3 Pin |
 | --- | --- |
-| **I2C SDA** | `IO4` (SDA_3V3)
-
- |
-| **I2C SCL** | `IO5` (SCL_3V3)
-
- |
-| **Power Output Enable** | `IO6` (`OUT_EN` / `PWR_EN`)
-
- |
+| **I2C SDA** | `IO4` (SDA_3V3) |
+| **I2C SCL** | `IO5` (SCL_3V3) |
+| **Power Output Enable** | `IO6` (`OUT_EN` / `PWR_EN`) |
 
 ---
 
@@ -67,6 +61,6 @@ pio run --target uploadfs
 ## Usage
 
 1. Reset the ESP32-C3. It will broadcast an open Wi-Fi access point named `EFS_USBC_Sink_[HEX]`.
-2. Connect to the Wi-Fi network using password `warg2026`.
+2. Connect to the Wi-Fi network using password `warg_efs`.
 3. Open a web browser and navigate to `[http://192.168.4.1](http://192.168.4.1)`.
 4. Use the terminal interface to select your target voltage, adjust the current limit slider, and toggle the output state.
