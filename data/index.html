@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PD_TERMINAL // AP33772S + INA219</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="header">
+            <span>root@esp32c3:~# ./pd_control.sh</span>
+            <span class="blink">_</span>
+        </div>
+        
+        <div class="control-group">
+            <label>[ VOLTAGE_TARGET ]</label>
+            <select id="voltage">
+                <option value="3.3">3.3V</option>
+                <option value="5.0">5.0V</option>
+                <option value="12.0">12.0V</option>
+                <option value="15.0">15.0V</option>
+                <option value="16.0">16.0V</option>
+                <option value="20.0">20.0V</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>[ MAX_CURRENT: <span id="current-val">2.0</span>A ]</label>
+            <input type="range" id="current" min="0.5" max="5.0" step="0.1" value="2.0">
+        </div>
+
+        <div class="control-group">
+            <label>[ OUTPUT_STATE ]</label>
+            <button id="toggle-btn" class="off">SYS_OFF</button>
+        </div>
+
+        <div class="telemetry">
+            <label>[ LIVE_TELEMETRY ]</label>
+            <div class="telemetry-data">
+                <div>> V_BUS : <span id="meas-v">--.--</span> V</div>
+                <div>> I_BUS : <span id="meas-i">--.--</span> A</div>
+                <div>> P_OUT : <span id="meas-p">--.--</span> W</div>
+            </div>
+        </div>
+
+        <div class="log" id="log">SYSTEM INITIALIZED... Ready for commands.</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
